@@ -7,14 +7,14 @@ class Main extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=ec5812e1&s=spider")
+    fetch("https://www.omdbapi.com/?i=tt3896198&apikey=ec5812e1&s=spider")
       .then((response) => response.json())
       .then((data) => this.setState({ movies: data.Search }));
   }
 
   searchBar = (text, type = "all") => {
     fetch(
-      `http://www.omdbapi.com/?i=tt3896198&apikey=ec5812e1&s=${text}${
+      `https://www.omdbapi.com/?i=tt3896198&apikey=ec5812e1&s=${text}${
         type !== "all" ? `&type=${type}` : ""
       }`
     )
